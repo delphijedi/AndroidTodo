@@ -132,24 +132,6 @@ public class TodoDetail extends AppCompatActivity implements View.OnClickListene
 
 
 
-        }else if (findViewById(R.id.btnDelete)==v){
-			Todo todo=new Todo();
-            Integer status =0;
-            todo.name= Name.getText().toString();
-            todo.isComplete = IsComplete.isChecked();
-            todo.id = Id;
-			restService.getService().deleteTodoById(_Id, todo, new Callback<Todo>() {
-				@Override
-                    public void success(Todo todo, Response response) {
-                        Toast.makeText(TodoDetail.this, "Todo Record deleted.", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void failure(RetrofitError error) {
-                        Toast.makeText(TodoDetail.this, error.getMessage().toString(), Toast.LENGTH_LONG).show();
-
-                    }
-			});
-		}
+        }
     }
 }
